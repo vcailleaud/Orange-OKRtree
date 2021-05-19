@@ -18,20 +18,14 @@
     <div class="container">
         <ct-visualization id="tree-container"></ct-visualization>  
         <script>
-          var width = 300, height = 300;
-            d3.json("data-example.json", function(error, json) {
-                treeBoxes('', json.tree);
-            });
-            
-            // Set-up the export button
-            d3.select('#saveButton').on('click', function(){
-              var svgString = getSVGString(svg.node());
-              svgString2Image( svgString, 2*width, 2*height, 'png', save ); // passes Blob and filesize String to the callback
+            var width = 300, height = 300;
+            //d3.json("data-example.json", function(error, json) {
+              //treeBoxes('', json.tree);
+						//});
 
-              function save( dataBlob, filesize ){
-                saveAs( dataBlob, 'CO2100002_treeview.png' ); // FileSaver.js function
-              }
-            });
+            var data= { 	"tree" : { 		"nodeName" : "Node name 1", 		"entiy" : "CSO", 		"type" : "CSO Objectives", 		"code" : "CO2100002", 		"label" : "Increase margin and transform our service model through digitalization, automation, data and AI", 		"StartDate" : "01/01/2021", 		"EndDate" : "30/06/2021", 		"Owner" : "Aliette Mousnier-Lompre OBS/SCE/CSO/EM", 		"link" : { 				"name" : "Link NODE NAME 1", 				"nodeName" : "NODE NAME 1", 				"direction" : "ASYNC" 			}, 		"children" : [{ 			"nodeName" : "NODE NAME 2.2", 			"entiy" : "CSO", 			"type" : "Key Result", 			"code" : "KR2100024", 			"label" : "We focus on OBS profitability through cost control, continuous improvement, cost structure change monitoring and smart workforce management", 			"StartDate" : "01/01/2021", 			"EndDate" : "30/06/2021", 			"Owner" : "Aliette Mousnier-Lompre OBS/SCE/CSO/EM", 			"link" : { 					"name" : "Link node 1 to 2.2", 					"nodeName" : "NODE NAME 2.2", 					"direction" : "ASYN" 				}, 			"children" : [{ 				"nodeName" : "NODE NAME 2.2.1", 				"entiy" : "CSO • SATO", 				"type" : "Project", 				"code" : "CSO210035", 				"label" : "Data Layer Simplification", 				"StartDate" : "23/02/2021", 				"EndDate" : "31/12/2022", 				"Owner" : "Marc Person OBS/SCE/CSO/SATO/D4OPS/DEN", 				"link" : { 						"name" : "Link node 1 to 2.2", 						"nodeName" : "NODE NAME 2.1.2", 						"direction" : "ASYN" 					}, 				"children" : [] 			}] 		}, { 				"nodeName" : "NODE NAME 2.1", 				"entiy" : "SATO", 				"type" : "Entity Objectives", 				"code" : "EO2100002", 				"label" : "More agile operational performance management thanks to insights, tools and a common practice", 				"StartDate" : "01/01/2021", 				"EndDate" : "30/06/2021", 				"Owner" : "Miguel Alvarez OBS/SCE/CSO/SATO/EM", 				"link" : { 						"name" : "Link node 1 to 2.1", 						"nodeName" : "NODE NAME 2.1", 						"direction" : "ASYN" 					}, 				"children" : [{ 						"nodeName" : "NODE NAME 3.1", 						"entiy" : "SATO", 						"type" : "Key Result", 						"code" : "KR2100004", 						"label" : "Ensure consistent cost model between presales and post-sales for Service Desk and FOIS (ESBU-led project)", 						"StartDate" : "01/01/2021", 						"EndDate" : "30/06/2021", 						"targetValue" : "", 						"Owner" : "Miguel Alvarez OBS/SCE/CSO/SATO/EM", 						"link" : { 								"name" : "Link node 2.1 to 3.1", 								"nodeName" : "NODE NAME 3.1", 								"direction" : "ASYN" 							}, 						"children" : [] 					}, { 						"nodeName" : "NODE NAME 3.2", 						"entiy" : "SATO", 						"type" : "Key Result", 						"code" : "KR2100004", 						"label" : "Federate CSO vision and methodology regarding profitability management ", 						"StartDate" : "01/01/2021", 						"EndDate" : "30/06/2021", 						"Owner" : "Miguel Alvarez OBS/SCE/CSO/SATO/EM", 						"targetValue" : "", 						"link" : { 								"name" : "Link node 2.1 to 3.2", 								"nodeName" : "NODE NAME 3.1", 								"direction" : "ASYN" 							}, 						"children" : [] 					} 				] 			}, { 				"nodeName" : "NODE NAME 2.3", 				"entity" : "IBO", 				"type" : "Entity Objectives", 				"code" : "EO2100007", 				"label" : "Deliver operational excellence in our everyday activities", 				"StartDate" : "01/01/2021", 				"EndDate" : "30/06/2021", 				"Owner" : "Matthieu Devaux OBS/SCE/CSO/IBO", 				"link" : { 						"name" : "Link node 1 to 2.3", 						"nodeName" : "NODE NAME 2.3", 						"direction" : "ASYN" 					}, 				"children" : [{ 						"nodeName" : "NODE NAME 3.3", 						"entity" : "IBO", 						"type" : "Key Result", 						"code" : "KR2100034", 						"label" : "Contribute to €2.8m to the transformation through OEC & UCE & govern the global IBO plan", 						"StartDate" : "01/01/2021", 						"EndDate" : "30/06/2021", 						"Owner" : "Matthieu Devaux OBS/SCE/CSO/IBO", 						"targetValue" : "€2.8m", 						"link" : { 								"name" : "Link node 2.3 to 3.3", 								"nodeName" : "NODE NAME 3.3", 								"direction" : "ASYN" 							}, 						"children" : [] 					}, { 						"nodeName" : "NODE NAME 3.4", 						"entity" : "IBO", 						"type" : "Key Result", 						"code" : "KR2100032", 						"label" : "mNPS @ 8.3", 						"StartDate" : "01/01/2021", 						"EndDate" : "30/06/2021", 						"Owner" : "Matthieu Devaux OBS/SCE/CSO/IBO", 						"targetValue" : "8.3", 						"link" : { 								"name" : "Link node 2.3 to 3.4", 								"nodeName" : "NODE NAME 3.4", 								"direction" : "ASYN" 							}, 						"children" : [] 					} 				] 			} 		] 	} };
+            treeBoxes('', data.tree);
+
         </script>
     </div>
 </body>

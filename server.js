@@ -114,33 +114,23 @@ var server = http.createServer(function(req, res) {
 																<title>D3.js collapsible tree with boxes</title>
 																<meta name="description" content="">
 																<meta name="viewport" content="width=device-width">
-																<link rel="stylesheet" type="text/css" href="styles/okrtree.css">
+																<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vcailleaud/Orange-OKRtree@main/styles/okrtree.css">
 															
 																<script src="https://cdn.rawgit.com/eligrey/canvas-toBlob.js/f1a01896135ab378aa5c0118eadd81da55e698d8/canvas-toBlob.js"></script>
 																<script src="https://cdn.rawgit.com/eligrey/FileSaver.js/e9d941381475b5df8b7d7691013401e171014e89/FileSaver.min.js"></script>
 																<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 																<script src="https://d3js.org/d3.v3.min.js" type="text/javascript"></script>
-																<script src="scripts/okrtree.js" type="text/javascript"></script>
+																<script src="https://cdn.jsdelivr.net/gh/vcailleaud/Orange-OKRtree@main/scripts/okrtree.js"></script>
 															</head>
 															<body>
 																<button id='saveButton'>Export to PNG</button>
 																<div class="container">
 																	<ct-visualization id="tree-container"></ct-visualization>  
 																	<script>
-																	var width = 300, height = 300;
-																		d3.json(`+data+`, function(error, json) {
-																			treeBoxes('', json.tree);
-																		});
-																		
-																		// Set-up the export button
-																		d3.select('#saveButton').on('click', function(){
-																		var svgString = getSVGString(svg.node());
-																		svgString2Image( svgString, 2*width, 2*height, 'png', save ); // passes Blob and filesize String to the callback
-															
-																		function save( dataBlob, filesize ){
-																			saveAs( dataBlob, 'CO2100002_treeview.png' ); // FileSaver.js function
-																		}
-																		});
+																		var width = 300, height = 300;
+
+																		var data= `+data+`;
+            															treeBoxes('', data.tree);
 																	</script>
 																</div>
 															</body>
