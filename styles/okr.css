@@ -306,7 +306,7 @@ ol.organizational-chart > li > ol > li > ol > li > ol > li > ol > li > div {
 
     .tooltip {
         position: relative;
-        display: inline-block;
+        display: inline;
         border-bottom: 1px dotted black;
       }
       
