@@ -315,7 +315,8 @@ ol.organizational-chart > li > ol > li > ol > li > ol > li > ol > li > div {
         width: 246px;
         background-color: #555;
         color: #fff;
-        text-align: center;
+        text-align: left;
+        line-height: 12px;
         font-size: 10px;
         border-radius: 6px;
         padding: 5px 0;
