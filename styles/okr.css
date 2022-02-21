@@ -305,12 +305,12 @@ ol.organizational-chart > li > ol > li > ol > li > ol > li > ol > li > div {
         width: 100%;
     }
 
-    .tooltip {
+    .tooltip_okr {
         position: relative;
         display: inline-block;
       }
       
-      .tooltip .tooltiptext {
+      .tooltip_okr .tooltiptext {
         visibility: hidden;
         width: 246px;
         background-color: #555;
@@ -329,7 +329,7 @@ ol.organizational-chart > li > ol > li > ol > li > ol > li > ol > li > div {
         transition: opacity 0.3s;
       }
       
-      .tooltip .tooltiptext::after {
+      .tooltip_okr .tooltiptext::after {
         content: "";
         position: absolute;
         top: 100%;
@@ -340,7 +340,7 @@ ol.organizational-chart > li > ol > li > ol > li > ol > li > ol > li > div {
         border-color: #555 transparent transparent transparent;
       }
       
-      .tooltip:hover .tooltiptext {
+      .tooltip_okr:hover .tooltiptext {
         visibility: visible;
         opacity: 1;
       }
