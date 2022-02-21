@@ -111,7 +111,7 @@ ol.organizational-chart li > div {
 
 /*** PRIMARY ***/
 ol.organizational-chart > li > div {
-    background-color: #9164CD;
+    background-color: #FFFFFF;
     margin-right: 1em;
 }
 
@@ -307,8 +307,7 @@ ol.organizational-chart > li > ol > li > ol > li > ol > li > ol > li > div {
 
     .tooltip {
         position: relative;
-        display: inline;
-        border-bottom: 1px dotted black;
+        display: inline-block;
       }
       
       .tooltip .tooltiptext {
