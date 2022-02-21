@@ -158,7 +158,7 @@ ol.organizational-chart > li > ol > li > div {
 /*** TERTIARY ***/
 ol.organizational-chart > li > ol > li > ol > li > div {
     background-color: #FFFFFF;
-    margin: 5% 0;
+    /*margin: 5% 0;*/
 }
 
 /*** QUATERNARY ***/
