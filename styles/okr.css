@@ -327,6 +327,9 @@ ol.organizational-chart > li > ol > li > ol > li > ol > li > ol > li > div {
         margin-left: -60px;
         opacity: 0;
         transition: opacity 0.3s;
+        white-space: normal;  
+        max-width:300px;  
+        word-wrap: break-word; 
       }
       
       .tooltip_okr .tooltiptext::after {
