@@ -174,14 +174,18 @@ var server = http.createServer(function(req, res) {
 			//X
 		} else {
 			console.log(new Date().toISOString()+ ' - ' + 'Bad request! : Missing tenant identifier');
+			console.log(req.connection.remoteAddress);
 			console.log(req.url);
+
 			res.writeHead(200, null);
 			res.write('HTTP/1.1 500 KO\r\n\r\n');
 			res.end();
 		}
 	} else {
 		console.log(new Date().toISOString()+ ' - ' + 'Bad request!');
+		console.log(req.connection.remoteAddress);
 		console.log(req.url);
+		
 		res.writeHead(200, null);
 		res.write('HTTP/1.1 500 KO\r\n\r\n');
 		res.end();
